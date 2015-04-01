@@ -1,0 +1,166 @@
+Windows PowerShell
+版权所有 (C) 2009 Microsoft Corporation。保留所有权利。
+
+C:\Users\Administrator> cd F/work
+Set-Location : 找不到路径“C:\Users\Administrator\F\work”，因为该路径不存在。
+所在位置 行:1 字符: 3
++ cd <<<<  F/work
+    + CategoryInfo          : ObjectNotFound: (C:\Users\Administrator\F\work:S
+   tring) [Set-Location], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLo
+   cationCommand
+
+C:\Users\Administrator> cd F:/work
+F:\work> git clone
+You must specify a repository to clone.
+
+usage: git clone [options] [--] <repo> [<dir>]
+
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --progress            force progress reporting
+    -n, --no-checkout     don't create a checkout
+    --bare                create a bare repository
+    --mirror              create a mirror repository (implies bare)
+    -l, --local           to clone from a local repository
+    --no-hardlinks        don't use local hardlinks, always copy
+    -s, --shared          setup as shared repository
+    --recursive           initialize submodules in the clone
+    --recurse-submodules  initialize submodules in the clone
+    --template <template-directory>
+                          directory from which templates will be used
+    --reference <repo>    reference repository
+    -o, --origin <name>   use <name> instead of 'origin' to track upstream
+    -b, --branch <branch>
+                          checkout <branch> instead of the remote's HEAD
+    -u, --upload-pack <path>
+                          path to git-upload-pack on the remote
+    --depth <depth>       create a shallow clone of that depth
+    --single-branch       clone only one branch, HEAD or --branch
+    --separate-git-dir <gitdir>
+                          separate git dir from working tree
+    -c, --config <key=value>
+                          set config inside the new repository
+
+F:\work> git clone git@github.com:yanhan19940405/yh1.git
+Cloning into 'yh1'...
+Warning: Permanently added 'github.com,192.30.252.130' (RSA) to the list of know
+n hosts.
+warning: You appear to have cloned an empty repository.
+Checking connectivity... done.
+F:\work> cd yh1
+F:\work\yh1 [master]> echo "shell"
+shell
+F:\work\yh1 [master]> echo "shell">yh
+F:\work\yh1 [master +1 ~0 -0 !]> git
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+The most commonly used git commands are:
+   add        Add file contents to the index
+   bisect     Find by binary search the change that introduced a bug
+   branch     List, create, or delete branches
+   checkout   Checkout a branch or paths to the working tree
+   clone      Clone a repository into a new directory
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   fetch      Download objects and refs from another repository
+   grep       Print lines matching a pattern
+   init       Create an empty Git repository or reinitialize an existing one
+   log        Show commit logs
+   merge      Join two or more development histories together
+   mv         Move or rename a file, a directory, or a symlink
+   pull       Fetch from and integrate with another repository or a local branch
+
+   push       Update remote refs along with associated objects
+   rebase     Forward-port local commits to the updated upstream head
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+   show       Show various types of objects
+   status     Show the working tree status
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+'git help -a' and 'git help -g' lists available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+F:\work\yh1 [master +1 ~0 -0 !]> git add -A
+F:\work\yh1 [master +1 ~0 -0]> git commit
+Aborting commit due to empty commit message.
+F:\work\yh1 [master +1 ~0 -0]> git commit -m
+error: switch `m' requires a value
+usage: git commit [options] [--] <pathspec>...
+
+    -q, --quiet           suppress summary after successful commit
+    -v, --verbose         show diff in commit message template
+
+Commit message options
+    -F, --file <file>     read message from file
+    --author <author>     override author for commit
+    --date <date>         override date for commit
+    -m, --message <message>
+                          commit message
+    -c, --reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --reuse-message <commit>
+                          reuse message from specified commit
+    --fixup <commit>      use autosquash formatted message to fixup specified co
+mmit
+    --squash <commit>     use autosquash formatted message to squash specified c
+ommit
+    --reset-author        the commit is authored by me now (used with -C/-c/--am
+end)
+    -s, --signoff         add Signed-off-by:
+    -t, --template <file>
+                          use specified template file
+    -e, --edit            force edit of commit
+    --cleanup <default>   how to strip spaces and #comments from message
+    --status              include status in commit message template
+    -S, --gpg-sign[=<key id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --all             commit all changed files
+    -i, --include         add specified files to index for commit
+    --interactive         interactively add files
+    -p, --patch           interactively add changes
+    -o, --only            commit only specified files
+    -n, --no-verify       bypass pre-commit hook
+    --dry-run             show what would be committed
+    --short               show status concisely
+    --branch              show branch information
+    --porcelain           machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    --amend               amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no.
+ (Default: all)
+
+F:\work\yh1 [master +1 ~0 -0]> git commit -m "guess" .
+[master (root-commit) 23e17cc] guess
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 yh
+F:\work\yh1 [master]> git push
+Warning: Permanently added 'github.com,192.30.252.128' (RSA) to the list of know
+n hosts.
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 214 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:yanhan19940405/yh1.git
+ * [new branch]      master -> master
+F:\work\yh1 [master]>
+F:\work\yh1 [master]> cd ..
+F:\work> git clone git@github.com:yanhan19940405/duangduang.git
+Cloning into 'duangduang'...
+Warning: Permanently added 'github.com,192.30.252.129' (RSA) to the list of know
+n hosts.
+remote: Counting objects: 821, done.
+Write failed: The connection was abortedMiB | 139.00 KiB/s
+fatal: The remote end hung up unexpectedly
+fatal: early EOF
+fatal: index-pack failed
+F:\work>
